@@ -2,7 +2,7 @@ package hw3;
 
 import java.util.Scanner;
 
-public class task3 {
+public class Task3 {
     public static void main(String[] args) {
         int i = 0, enteredNumber = -1, factorial = 1;
         Scanner scanner = new Scanner(System.in);

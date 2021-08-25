@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class task2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = -1, factorial = 1;
-        while (n < 0){
+        int enteredNumber = -1, factorial = 1;
+        while (enteredNumber < 0){
             System.out.print("Enter n: ");
-            n = scanner.nextInt();
+            enteredNumber = scanner.nextInt();
         }
-        for (int i = n; i > 0; i--) {
+        for (int i = enteredNumber; i > 0; i--) {
             factorial *= i;
         }
-        System.out.println(String.format("%d! = %d", n, factorial));
+        System.out.println(String.format("%d! = %d", enteredNumber, factorial));
     }
 }

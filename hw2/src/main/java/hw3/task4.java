@@ -4,29 +4,26 @@ import java.util.Scanner;
 
 public class task4 {
     public static void main(String[] args) {
-        int i = 0, n = -1, factorial = 1;
+        int i = 0, enteredNumber = -1, factorial = 1, count = 1;
         Scanner scanner = new Scanner(System.in);
 
         //1st rewritten task ;
-        do{
+        do {
             if (i % 2 == 1)
                 System.out.println(i);
         }
         while (i++ < 100);
 
         //2nd rewritten task
-        while (n < 0) {
+        while (enteredNumber < 0) {
             System.out.print("Enter n: ");
-            n = scanner.nextInt();
+            enteredNumber = scanner.nextInt();
         }
-        if(n != 0) {
-            int count = n; // for beautiful output)
-            do {
-                factorial *= count;
-                count--;
-            }
-            while (count != 1);
+        do {
+            factorial *= count++;
         }
-        System.out.println(String.format("%d! = %d", n, factorial));
+        while (count <= enteredNumber);
+
+        System.out.println(String.format("%d! = %d", enteredNumber, factorial));
     }
 }

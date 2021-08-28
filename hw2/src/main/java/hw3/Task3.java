@@ -14,12 +14,12 @@ public class Task3 {
         }
 
         //2nd rewritten task
-        while (enteredNumber < 0){
+        while (enteredNumber < 0) {
             System.out.print("Enter n: ");
             enteredNumber = scanner.nextInt();
         }
         int count = enteredNumber; // for beautiful output)
-        if(enteredNumber != 0) {
+        if (enteredNumber != 0) {
             do {
                 factorial *= count--;
             }

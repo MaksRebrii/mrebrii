@@ -33,7 +33,7 @@ public class Task9 {
         System.out.println("Original array : " + arrayList);
         for (int i = 0; i < counterMinValue; i++) {
             System.out.print(minValue);
-            if(i == counterMinValue -1 ) System.out.print(".");
+            if (i == counterMinValue - 1) System.out.print(".");
             else System.out.print(", ");
         }
     }

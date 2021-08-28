@@ -23,6 +23,6 @@ public class Task12 {
             sum += val;
         }
         System.out.println(arrayList);
-        System.out.println(String.format("Average is  %.5f", (double)sum / arrayList.size()));
+        System.out.println(String.format("Average is  %.5f", (double) sum / arrayList.size()));
     }
 }

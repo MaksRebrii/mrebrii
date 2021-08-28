@@ -12,7 +12,7 @@ public class Task8 {
         }
         for (i = 0; i < oddNumbers.size(); i++) {
             System.out.print(oddNumbers.get(i));
-            if(i == oddNumbers.size() -1 ) System.out.print(".");
+            if (i == oddNumbers.size() - 1) System.out.print(".");
             else System.out.print(", ");
         }
     }

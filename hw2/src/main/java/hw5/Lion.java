@@ -8,6 +8,6 @@ public class Lion extends Wild{
     @Override
     public void voice() {
         super.voice();
-        System.out.println("Roar");
+        System.out.println("\nRoar");
     }
 }

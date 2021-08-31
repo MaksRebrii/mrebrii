@@ -8,6 +8,6 @@ public class Wolf extends Wild{
     @Override
     public void voice() {
         super.voice();
-        System.out.println("Howl");
+        System.out.println("\nHowl");
     }
 }

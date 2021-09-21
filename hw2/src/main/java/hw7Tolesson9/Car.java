@@ -5,6 +5,8 @@ public class Car {
     private static final int MAX_TANK_CAPACITY = 60;
     private static final double MIN_FUEL_IN_TANK_COEFFICIENT = 0.1;
     private static final double MAX_FUEL_IN_TANK_COEFFICIENT = 0.5;
+    private static final double MIN_FUEL_CONSUMPTION = 5;
+    private static final double MAX_FUEL_CONSUMPTION = 15;
     private static final int MONEY_COEFFICIENT = 10000;
 
     private final int tankCapacity;
@@ -20,7 +22,7 @@ public class Car {
         this.tankCapacity = (int) (Math.random() * (MAX_TANK_CAPACITY - MIN_TANK_CAPACITY) + MIN_TANK_CAPACITY);
         this.fuelInTank = generateFuelIntTank(tankCapacity);
 
-        this.fuelConsumption = Math.random() * 20 + 5;
+        this.fuelConsumption = Math.random() * (MAX_FUEL_CONSUMPTION - MIN_FUEL_CONSUMPTION) + MIN_FUEL_CONSUMPTION;
         this.location = location;
     }
 

@@ -34,7 +34,7 @@ public class Car {
     }
 
     public void drive(int distance, String destination) {
-        System.out.printf("Едем в %s. %d км...%n" , destination, distance);
+        System.out.printf("Едем в %s. %d км...%n", destination, distance);
         fuelInTank -= fuelConsumptionPerNKilometers(distance);
         tripDistance += distance;
         if (fuelInTank < 0) throw new RuntimeException("Упс... Мы заглохли. Закончилось топливо!");
@@ -42,12 +42,10 @@ public class Car {
     }
 
     public void fillTank(double liters, double fuelPrice) {
-        if(liters >= getMaxFuelToFill()) {
+        if (liters >= getMaxFuelToFill()) {
             tripMoneySpent += (long) (getMaxFuelToFill() * fuelPrice * MONEY_COEFFICIENT);
             this.fuelInTank = getMaxFuelToFill();
-        }
-
-        else {
+        } else {
             tripMoneySpent += (long) (liters * fuelPrice * MONEY_COEFFICIENT);
             this.fuelInTank += liters;
         }
@@ -55,7 +53,7 @@ public class Car {
 
     public void printTripReport() {
         System.out.println("----------Отчет о поездке----------");
-        System.out.printf("Остаток топлива в баке %.2f л. Всего проехали %d км. Всего потрачено %.2f грн. Местоположение авто - %s", getFuelInTank(), tripDistance, getTripMoneySpent(), location);
+        System.out.printf("Остаток топлива в баке: %.2f л. Всего проехали: %d км. Всего потрачено: %.2f грн. Местоположение авто: %s", getFuelInTank(), tripDistance, getTripMoneySpent(), location);
     }
 
 
@@ -68,18 +66,16 @@ public class Car {
     }
 
     private double fuelConsumptionPerNKilometers(int numberOfKilometers) {
-        return this.fuelConsumption * numberOfKilometers / 100;
+        return numberOfKilometers * this.fuelConsumption / 100;
     }
 
-    private double getMaxFuelToFill(){
+    private double getMaxFuelToFill() {
         return tankCapacity - fuelInTank;
     }
 
-    private double getTripMoneySpent(){
+    private double getTripMoneySpent() {
         return (double) tripMoneySpent / MONEY_COEFFICIENT;
     }
-
-
 
 
     @Override

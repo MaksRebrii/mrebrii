@@ -6,8 +6,7 @@ public class Cat extends Pet{
     }
 
     @Override
-    public void voice() {
-        super.voice();
-        System.out.println("\nMeow");
+    public String makeVoice() {
+        return super.makeVoice().concat("Meow").concat(System.lineSeparator());
     }
 }

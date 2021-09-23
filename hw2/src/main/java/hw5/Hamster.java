@@ -6,7 +6,7 @@ public class Hamster extends Pet{
     }
 
     @Override
-    public void voice() {
-        super.voice();
+    public String makeVoice() {
+        return super.makeVoice();
     }
 }

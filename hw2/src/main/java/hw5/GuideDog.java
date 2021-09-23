@@ -1,6 +1,6 @@
 package hw5;
 
-public class GuideDog extends Dog{
+public class GuideDog extends Dog implements ExtraSkills{
 
     protected boolean isTrained;
 
@@ -10,12 +10,16 @@ public class GuideDog extends Dog{
     }
 
     @Override
-    public void voice() {
-        super.voice();
-        System.out.println("I can take you home");
+    public String makeVoice() {
+        return super.makeVoice().concat("I can take you home").concat(System.lineSeparator());
     }
 
     public void TakeHome(){
         System.out.println("I'm taking home");
+    }
+
+    @Override
+    public void bringSomething(String thing) {
+        System.out.printf("I can bring you %s%n", thing);
     }
 }

@@ -1,6 +1,6 @@
 package hw5;
 
-public class Wild extends Animal{
+public class Wild extends Animal implements Voice{
     protected boolean isPredator;
 
     public Wild(int age, float weight, String color, boolean isPredator) {
@@ -9,10 +9,12 @@ public class Wild extends Animal{
     }
 
     @Override
-    public void voice() {
-        super.voice();
-        System.out.println("I'm a wild animal");
+    public String makeVoice() {
+        StringBuilder result = new StringBuilder();
+        result.append(sayHello()).append("I'm a wild animal. ");
         if(isPredator)
-            System.out.println("And I'm predator");
+            result.append("And I'm predator");
+        result.append(System.lineSeparator());
+        return result.toString();
     }
 }

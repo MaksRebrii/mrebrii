@@ -6,8 +6,7 @@ public class Wolf extends Wild{
     }
 
     @Override
-    public void voice() {
-        super.voice();
-        System.out.println("\nHowl");
+    public String makeVoice() {
+        return super.makeVoice().concat("Howl").concat(System.lineSeparator());
     }
 }

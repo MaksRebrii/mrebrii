@@ -5,9 +5,10 @@ public class Dog extends Pet{
         super(age, weight, color, name, true);
     }
 
+
+
     @Override
-    public void voice() {
-        super.voice();
-        System.out.println("\nWoof");
+    public String makeVoice() {
+        return super.makeVoice().concat("Woof").concat(System.lineSeparator());
     }
 }

@@ -1,6 +1,6 @@
 package hw5;
 
-public class Animal {
+public abstract class Animal {
     protected static int counter;
     protected int id;
     protected int age;
@@ -14,9 +14,7 @@ public class Animal {
         this.color = color;
     }
 
-    public void voice(){
-        System.out.println("Hello");
-    }
+
 
     private void setId(){
         this.id = counter++;

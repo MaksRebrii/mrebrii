@@ -1,6 +1,6 @@
 package hw5;
 
-public class Pet extends Animal {
+public class Pet extends Animal implements Voice{
     protected String name;
     protected boolean isVaccinated;
 
@@ -11,8 +11,7 @@ public class Pet extends Animal {
     }
 
     @Override
-    public void voice() {
-        super.voice();
-        System.out.printf("My name is: %s", name);
+    public String makeVoice() {
+        return sayHello().concat("My name is: ").concat(name).concat(System.lineSeparator());
     }
 }

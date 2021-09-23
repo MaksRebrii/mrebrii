@@ -6,7 +6,7 @@ public class Giraffe extends Wild{
     }
 
     @Override
-    public void voice() {
-        super.voice();
+    public String makeVoice() {
+        return super.makeVoice();
     }
 }

@@ -6,8 +6,8 @@ public class Lion extends Wild{
     }
 
     @Override
-    public void voice() {
-        super.voice();
-        System.out.println("\nRoar");
+    public String makeVoice() {
+        return super.makeVoice().concat("Roar").concat(System.lineSeparator());
     }
+
 }

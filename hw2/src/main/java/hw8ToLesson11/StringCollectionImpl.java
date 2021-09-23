@@ -16,7 +16,8 @@ public class StringCollectionImpl implements StringCollection{
 
     @Override
     public String get(int index) {
-        checkIndex(index);
+        if(checkWrongIndex(index))
+            return null;
         return data[index];
     }
 
@@ -28,7 +29,8 @@ public class StringCollectionImpl implements StringCollection{
     @Override
     public boolean add(int index, String str) {
         increaseArray();
-        checkIndex(index);
+        if(checkWrongIndex(index))
+            return false;
         System.arraycopy(data, index, data, index + 1, size - index);
         data[index] = str;
         size++;
@@ -64,6 +66,8 @@ public class StringCollectionImpl implements StringCollection{
 
     @Override
     public boolean equals(StringCollection collection) {
+        if(this == collection)
+            return true;
         if (size != collection.size())
             return false;
         for (int i = 0; i < size; i++) {
@@ -102,9 +106,8 @@ public class StringCollectionImpl implements StringCollection{
         }
     }
 
-    private void checkIndex(int index){
-        if(index < 0 || index > size)
-            throw new IndexOutOfBoundsException();
+    private boolean checkWrongIndex(int index){
+        return index < 0 || index > size;
     }
 
     private void increaseArray(){

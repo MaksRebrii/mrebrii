@@ -118,6 +118,9 @@ public class MyStringLinkedListCollection implements CustomCollection {
     }
 
     private int findNodeByValue(String value) {
+        if (value == null){
+            throw new IllegalArgumentException();
+        }
         Node node = firstElement;
         for (int i = 0; i < size; i++) {
             if (value.equals(node.value)) {

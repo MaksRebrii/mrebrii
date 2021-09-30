@@ -58,7 +58,7 @@ public class MyStringLinkedListCollection implements CustomCollection {
     @Override
     public boolean delete(String str) {
         int index = findNodeByValue(str);
-        if(index != -1)
+        if (index != -1)
             return delete(index);
         return false;
     }
@@ -67,7 +67,7 @@ public class MyStringLinkedListCollection implements CustomCollection {
     public String get(int index) {
         return getNodeByIndex(index).value;
     }
-//TODO
+
     @Override
     public boolean contains(String str) {
         return findNodeByValue(str) != -1;
@@ -86,7 +86,7 @@ public class MyStringLinkedListCollection implements CustomCollection {
         return size;
     }
 
-    //TODO what does this method do?
+    @Deprecated
     @Override
     public boolean trim() {
         getNodeByIndex(size).next = firstElement;
@@ -117,7 +117,7 @@ public class MyStringLinkedListCollection implements CustomCollection {
         return node;
     }
 
-    private int findNodeByValue(String value){
+    private int findNodeByValue(String value) {
         Node node = firstElement;
         for (int i = 0; i < size; i++) {
             if (value.equals(node.value)) {
@@ -130,8 +130,8 @@ public class MyStringLinkedListCollection implements CustomCollection {
 
     private static class Node {
 
-        private Node previous;
         private final String value;
+        private Node previous;
         private Node next;
 
         public Node(Node previous, String value, Node next) {

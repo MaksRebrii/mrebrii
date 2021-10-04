@@ -6,6 +6,7 @@ import java.util.List;
 public class Task2 {
 
     private static final int COLLECTION_SIZE = 1_000;
+    private static final int BOX_WEIGHT = 300;
 
     public static void main(String[] args) {
         List<Box> source = createNewCollection();
@@ -27,9 +28,9 @@ public class Task2 {
 
     public static void replaceBoxWithWeightsMoreThan300(List<Box> source, List<Box> destination) {
         for (int i = 0; i < source.size(); i++) {
-            if (source.get(i).getWeight() > 300) {
+            if (source.get(i).getWeight() > BOX_WEIGHT) {
                 destination.add(source.get(i));
-                source.remove(source.get(i--)); // removing element it's number should be checked because of  shifting elements
+                source.remove(i--); // removing element it's number should be checked because of  shifting elements
             }
         }
     }
@@ -37,7 +38,7 @@ public class Task2 {
     private static boolean checkingResult(List<Box> boxes) {
         for (Box box :
                 boxes) {
-            if (box.getWeight() > 300)
+            if (box.getWeight() > BOX_WEIGHT)
                 return false;
         }
         return true;

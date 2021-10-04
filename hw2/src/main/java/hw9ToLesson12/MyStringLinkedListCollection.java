@@ -1,5 +1,7 @@
 package hw9ToLesson12;
 
+import java.util.StringJoiner;
+
 public class MyStringLinkedListCollection implements CustomCollection {
     private Node firstElement;
     private Node lastElement;
@@ -106,6 +108,17 @@ public class MyStringLinkedListCollection implements CustomCollection {
                 return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        StringJoiner stringJoiner = new StringJoiner(", ", "[", "]");
+        Node current = firstElement;
+        while (current != null) {
+            stringJoiner.add(current.value);
+            current = current.next;
+        }
+        return stringJoiner.toString();
     }
 
     private Node getNodeByIndex(int index) {

@@ -30,10 +30,8 @@ public class LoginUtil {
         if (loginData.containsKey(login)) {
             if (loginData.get(login).equals(password))
                 return true;
-            System.out.println("Wrong password!");
-            return false;
         }
-        System.out.println("Can't find user with this login!");
+        System.out.println("Wrong login or password");
         return false;
     }
 

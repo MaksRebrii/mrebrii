@@ -5,7 +5,7 @@ public class WrongPasswordException extends RuntimeException {
     private static final String DEFAULT_MESSAGE = "Wrong password.";
 
     public WrongPasswordException() {
-        super();
+
     }
 
     public WrongPasswordException(String message) {
